@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjem & Jastip - Komunitas Mahasiswa by MahasiswaUndip.ID</title>
+    <style>
+        /* --- RESET & BASE STYLE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        /* Tema Warna: Soft Pastel Gradient (Menyenangkan & Cerah) */
+        body {
+            background: linear-gradient(135deg, #fef08a, #fbcfe8, #e0f2fe);
+            color: #334155;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- NAVBAR --- */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; max-width: 1000px; margin: 0 auto; }
+        .logo { font-weight: 700; font-size: 1.3rem; background: linear-gradient(to right, #db2777, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-tag { font-size: 0.8rem; color: #64748b; font-weight: 600; }
+
+        /* --- HERO SECTION --- */
+        .hero { padding: 70px 0 50px; text-align: center; }
+        .badge { background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.2); color: #2563eb; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 20px; }
+        h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; color: #1e293b; }
+        h1 span { background: linear-gradient(to right, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.05rem; color: #475569; max-width: 650px; margin: 0 auto 35px; font-weight: 500; }
+        
+        /* Tombol CTA dengan warna pastel tegas agar kontras */
+        .cta-btn {
+            display: inline-block; background: linear-gradient(to right, #3b82f6, #a855f7);
+            color: #fff; padding: 16px 36px; border-radius: 50px; text-decoration: none;
+            font-weight: 600; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3); transition: 0.3s ease;
+            cursor: pointer; border: none; font-size: 1rem;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5); }
+
+        /* --- REUSABLE SOFT GLASS CARD --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px; padding: 35px; margin-bottom: 35px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+        .section-title { text-align: center; font-size: 1.6rem; margin-bottom: 10px; font-weight: 700; color: #1e293b; }
+        .section-title span { color: #db2777; }
+        .subtitle { text-align: center; color: #475569; margin-bottom: 30px; font-size: 0.95rem; font-weight: 500; }
+
+        /* --- WHY US (GRID) --- */
+        .grid-services { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        .service-box { background: rgba(255, 255, 255, 0.5); border: 1px solid rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 16px; text-align: center; }
+        .service-box h3 { font-size: 1.1rem; margin-bottom: 8px; color: #1e293b; font-weight: 700; }
+        .service-box p { font-size: 0.85rem; color: #475569; }
+        .service-box a { color: #2563eb; text-decoration: none; font-weight: 600; }
+        .service-box a:hover { text-decoration: underline; }
+
+        /* --- HOW TO ORDER SECTION --- */
+        .order-list { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .order-item { display: flex; gap: 15px; background: rgba(255, 255, 255, 0.3); padding: 18px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.4); }
+        .order-num { background: #3b82f6; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+        .order-text h4 { font-size: 1rem; color: #1e293b; margin-bottom: 4px; font-weight: 700; }
+        .order-text p { font-size: 0.9rem; color: #475569; }
+        
+        /* Contoh Format Chat Area */
+        .example-box { background: rgba(255, 255, 255, 0.6); border: 1px dashed #3b82f6; padding: 12px 15px; border-radius: 10px; margin-top: 10px; display: inline-block; font-family: 'Courier New', Courier, monospace; font-size: 0.85rem; color: #1e293b; font-weight: 600; }
+
+        /* --- PRICING SECTION --- */
+        .price-focus { text-align: center; padding: 15px 0; }
+        .price-tag { font-size: 3rem; font-weight: 800; background: linear-gradient(to right, #2563eb, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px; }
+
+        /* --- ACCORDION RULES --- */
+        .accordion { margin-top: 15px; }
+        .accordion-item { border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+        .accordion-header { width: 100%; background: none; border: none; color: #1e293b; text-align: left; padding: 15px 0; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #475569; font-size: 0.9rem; }
+        .accordion-content p { padding-bottom: 15px; }
+
+        /* --- SECURITY WARNING & DISCLAIMER (Soft Alert Tones) --- */
+        .alert-box { border-left: 4px solid #f43f5e; background: rgba(244, 63, 94, 0.06); padding: 20px; border-radius: 0 16px 16px 0; margin-bottom: 20px; }
+        .alert-box h4 { color: #e11d48; font-size: 1.05rem; margin-bottom: 5px; font-weight: 700; }
+        .alert-box p { font-size: 0.85rem; color: #475569; }
+        
+        .disclaimer-box { border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.06); padding: 20px; border-radius: 0 16px 16px 0; }
+        .disclaimer-box h4 { color: #b45309; font-size: 1.05rem; margin-bottom: 5px; font-weight: 700; }
+        .disclaimer-box p { font-size: 0.85rem; color: #475569; }
+
+        /* --- POPUP MODAL --- */
+        .popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.3); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .popup-overlay.active { opacity: 1; pointer-events: auto; }
+        .popup-card { background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); border-radius: 24px; padding: 35px; width: 90%; max-width: 420px; text-align: center; position: relative; transform: scale(0.9); transition: transform 0.3s ease; }
+        .popup-overlay.active .popup-card { transform: scale(1); }
+        .popup-card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #1e293b; }
+        .popup-card p { font-size: 0.9rem; color: #475569; margin-bottom: 25px; }
+        .popup-close { position: absolute; top: 15px; right: 20px; background: none; border: none; color: #64748b; font-size: 1.5rem; cursor: pointer; }
+        
+        .popup-links { display: flex; flex-direction: column; gap: 12px; }
+        .popup-btn { display: block; padding: 14px; border-radius: 12px; text-decoration: none; color: #fff; font-weight: 600; font-size: 0.95rem; transition: 0.2s; text-align: center; }
+        .btn-tembalang { background: #3b82f6; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2); }
+        .btn-tembalang:hover { background: #2563eb; }
+        .btn-pleburan { background: #ec4899; box-shadow: 0 4px 10px rgba(236, 72, 153, 0.2); }
+        .btn-pleburan:hover { background: #db2777; }
+
+        /* --- FOOTER MODERASI & KONTAK --- */
+        footer { text-align: center; padding: 40px 20px 30px; border-top: 1px solid rgba(0, 0, 0, 0.05); margin-top: 40px; }
+        .footer-cta { margin-bottom: 35px; }
+        
+        /* Section Baru: Contact Us & Kerjasama */
+        .footer-contact {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 25px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.03);
+        }
+        .footer-contact h4 { font-size: 1.1rem; color: #1e293b; margin-bottom: 15px; font-weight: 700; }
+        .contact-grid { display: flex; flex-direction: column; gap: 10px; text-align: left; max-width: 320px; margin: 0 auto; }
+        .contact-item { display: flex; align-items: center; font-size: 0.95rem; color: #475569; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+        .contact-item:hover { color: #2563eb; }
+        .contact-icon { width: 24px; font-weight: bold; color: #3b82f6; display: inline-block; }
+        
+        footer .copyright { font-size: 0.85rem; color: #64748b; font-weight: 500; margin-top: 15px; }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.9rem; }
+            .grid-services { grid-template-columns: 1fr; gap: 15px; }
+            .popup-card { padding: 25px; }
+            .footer-contact { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Anjem & Jastip</div>
+            <div class="nav-tag">by MahasiswaUndip.ID</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <section class="hero">
+            <span class="badge">Media Informasi Resmi Komunitas</span>
+            <h1>Solusi Transportasi & <span>Jasa Titip</span> Mahasiswa</h1>
+            <p>Nggak perlu bingung mobilitas ke kampus atau mager keluar kosan. Temukan teman antar-jemput dan jastip terpercaya khusus wilayah Tembalang & Pleburan dengan aman, cepat, dan terorganisir.</p>
+            <button class="cta-btn open-popup-btn">Join Grup WhatsApp</button>
+        </section>
+
+        <section class="about glass-card">
+            <h2 class="section-title">Tentang <span>Komunitas</span></h2>
+            <p class="subtitle">Platform komunitas independen dari mahasiswa, oleh mahasiswa, untuk semua mahasiswa lintas kampus di wilayah Tembalang & Pleburan.</p>
+            <div class="grid-services">
+                <div class="service-box">
+                    <h3>Aman & Teratur</h3>
+                    <p>Grup dikontrol penuh oleh moderator dari <a href="https://mahasiswaundip.my.id" target="_blank">MahasiswaUndip.ID</a> untuk meminimalisir penyusup atau spammer.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Khusus Mahasiswa</h3>
+                    <p>Ekosistem komunitas yang berisi mahasiswa aktif antar-kampus di wilayah Tembalang, Pleburan & Sekitarnya.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Sistem COD & Tanpa Biaya Tambahan</h3>
+                    <p>Transaksi dilakukan langsung secara transparan antar pengguna setelah jasa selesai dikerjakan tanpa adanya tambahan biaya lain.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card text-center">
+            <h2 class="section-title">Tarif Hemat <span>Kantong Mahasiswa</span></h2>
+            <div class="price-focus">
+                <div class="price-tag">Mulai 5K Aja</div>
+                <p style="color: #475569; font-weight: 600;">Terjangkau banget buat kamu yang sering bolak-balik kampus!</p>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2 class="section-title">Cara Order <span>di Dalam Grup</span></h2>
+            <p class="subtitle">Ikuti langkah-langkah mudah berikut ini setelah kamu masuk ke grup WhatsApp komunitas:</p>
+            
+            <div class="order-list">
+                <div class="order-item">
+                    <div class="order-num">1</div>
+                    <div class="order-text">
+                        <h4>Format Pesan Harus Jelas</h4>
+                        <p>Cantumkan rute perjalanan, waktu penjemputan, atau jenis barang/jasa titip secara spesifik ke dalam chat grup.</p>
+                        <div class="example-box">Contoh: "Need Anjem dari Sirojudin ke FSM jam 9"</div><br>
+                        <div class="example-box">Contoh: "Need Jastip beli kertas ke Banjarsari"</div>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <div class="order-num">2</div>
+                    <div class="order-text">
+                        <h4>Gunakan Bahasa yang Sopan</h4>
+                        <p>Berkomunikasilah secara santun & saling menghargai sesama mahasiswa. Selalu utamakan kejujuran dan keamanan bersama.</p>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <div class="order-num">3</div>
+                    <div class="order-text">
+                        <h4>Verifikasi Keanggotaan Driver</h4>
+                        <p>Demi keamanan, pastikan nomor WhatsApp driver/penyedia jasa yang menghubungi kamu lewat jalur pribadi (*chat PC*) terdaftar sebagai anggota di dalam grup.</p>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <div class="order-num">4</div>
+                    <div class="order-text">
+                        <h4>Belum Dapat Driver?</h4>
+                        <p>Jika pesanan kamu belum direspons atau belum mendapatkan driver dalam beberapa waktu, silakan *reply* (balas) pesan awal kamu dengan mengetik <span style="font-weight: 700; color: #2563eb;">"masih need"</span>.</p>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <div class="order-num">5</div>
+                    <div class="order-text">
+                        <h4>Pesanan Selesai / Terisi</h4>
+                        <p>Jika kamu sudah mendapatkan driver atau pesanan sudah selesai diproses, wajib melakukan <span style="font-weight: 700; color: #db2777;">*unsend chat*</span> atau berikan *react* berupa <span style="font-weight: 700; color: #db2777;">tanda centang (✅)</span> pada pesan kamu agar tidak di-chat lagi oleh driver lain.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2 class="section-title">Aturan <span>Komunitas</span></h2>
+            <p class="subtitle">Demi menjaga ketertiban bersama di dalam grup koordinasi, seluruh anggota wajib mematuhi ketentuan berikut:</p>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">1. Fokus Layanan Komunitas <span>+</span></button>
+                    <div class="accordion-content">
+                        <p>Grup ini murni diperuntukkan untuk aktivitas koordinasi jasa Antar-Jemput (Anjem), Jasa Titip (Jastip), dan Jasa Suruh harian mahasiswa.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">2. Larangan Keras (Spam & Joki) <span>+</span></button>
+                    <div class="accordion-content">
+                        <p>Dilarang keras melakukan spam iklan komersial luar (Jualan, danus, dll), menawarkan jasa joki akademik/tugas kuliah, dan menyebarkan konten bermuatan SARA/Politik.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">3. Sanksi Pelanggaran <span>+</span></button>
+                    <div class="accordion-content">
+                        <p>Setiap akun yang melanggar aturan di atas atau terindikasi melakukan aktivitas mencurigakan akan langsung dikenakan sanksi Kick Permanen oleh moderator.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2 class="section-title" style="margin-bottom: 25px;">Keamanan & <span>Batasan Tanggung Jawab</span></h2>
+            
+            <div class="alert-box">
+                <h4>Himbauan Hindari Penipuan</h4>
+                <p>Selalu periksa keaslian profil personil pengirim jasa. Hindari melakukan transfer uang/pembayaran di awal (DP) sebelum barang atau jasa benar-benar kamu terima. Utamakan metode pembayaran Cash on Delivery (COD). Segera laporkan ke admin jika menemukan aktivitas mencurigakan.</p>
+            </div>
+
+            <div class="disclaimer-box">
+                <h4>Disclaimer</h4>
+                <p>Layanan Temcy dan MahasiswaUndip.ID murni bertindak sebagai penyedia media informasi dan wadah komunitas. Segala bentuk transaksi, kesepakatan harga, maupun risiko yang timbul selama aktivitas di lapangan sepenuhnya menjadi tanggung jawab masing-masing pengguna (pengguna jasa dan penyedia jasa).</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-cta">
+            <p style="color: #1e293b; font-size: 1rem; margin-bottom: 15px; font-weight: 600;">Tunggu apa lagi? Yuk gabung sekarang!</p>
+            <button class="cta-btn open-popup-btn">Join Grup Sekarang</button>
+        </div>
+
+        <div class="footer-contact">
+            <h4>For collabs & inquiries, drop a line to...</h4>
+            <div class="contact-grid">
+                <a href="https://www.instagram.com/mahasiswaundip.id" target="_blank" class="contact-item">
+                    <span class="contact-icon">📸</span> instagram.com/mahasiswaundip.id
+                </a>
+                <a href="https://www.tiktok.com/@mahasiswaundip.id" target="_blank" class="contact-item">
+                    <span class="contact-icon">🎵</span> tiktok.com/@mahasiswaundip.id
+                </a>
+                <a href="https://wa.me/6281390776494" target="_blank" class="contact-item">
+                    <span class="contact-icon">💬</span> wa.me/6281390776494
+                </a>
+            </div>
+        </div>
+
+        <p class="copyright">&copy; 2026 MahasiswaUndip.ID. All rights reserved.</p>
+    </footer>
+
+    <div class="popup-overlay" id="regionPopup">
+        <div class="popup-card">
+            <button class="popup-close" id="closePopupBtn">&times;</button>
+            <h3>Pilih Wilayah Domisili</h3>
+            <p>Silakan pilih grup koordinasi WhatsApp sesuai dengan area kampus atau tempat tinggalmu saat ini.</p>
+            <div class="popup-links">
+                <a href="https://chat.whatsapp.com/LinkGrupTembalang" target="_blank" class="popup-btn btn-tembalang">Grup Wilayah Tembalang</a>
+                <a href="https://chat.whatsapp.com/LinkGrupPleburan" target="_blank" class="popup-btn btn-pleburan">Grup Wilayah Pleburan</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logika Interaksi Pop-up Wilayah
+        const popup = document.getElementById('regionPopup');
+        const closeBtn = document.getElementById('closePopupBtn');
+        const openBtns = document.querySelectorAll('.open-popup-btn');
+
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', () => popup.classList.add('active'));
+        });
+
+        closeBtn.addEventListener('click', () => popup.classList.remove('active'));
+        
+        popup.addEventListener('click', (e) => {
+            if(e.target === popup) popup.classList.remove('active');
+        });
+
+        // Logika Interaksi Accordion Aturan
+        const accHeaders = document.querySelectorAll('.accordion-header');
+        accHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const span = this.querySelector('span');
+                
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    content.style.maxHeight = '0px';
+                    span.textContent = '+';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    span.textContent = '-';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
