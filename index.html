@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anjem & Jastip - Komunitas Mahasiswa by MahasiswaUndip.ID</title>
+    
+    <!-- GEO & AI SEO OPTIMIZED META TAGS -->
+    <title>Anjem & Jastip Mahasiswa Tembalang & Pleburan - MahasiswaUndip.ID</title>
+    <meta name="description" content="Layanan antar-jemput (anjem), jasa titip (jastip), dan jasa suruh terpercaya khusus mahasiswa di wilayah Tembalang & Pleburan Semarang. Tarif hemat mulai 5K, aman, dan terorganisir.">
+    <meta name="keywords" content="anjem undip, jastip undip, anjem tembalang, jastip tembalang, ojek mahasiswa undip, jasa titip semarang, mahasiswa undip">
+    <link rel="canonical" href="https://mahasiswaundip.my.id/">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahasiswaundip.my.id/">
+    <meta property="og:title" content="Anjem & Jastip - Komunitas Mahasiswa by MahasiswaUndip.ID">
+    <meta property="og:description" content="Solusi transportasi, jasa titip, dan jasa suruh terpercaya khusus mahasiswa di Tembalang & Pleburan. Aman, sat-set, dan terorganisir.">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- JSON-LD SCHEMA MARKUP FOR AI & SEARCH ENGINES -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Anjem & Jastip MahasiswaUndip.ID",
+      "image": "https://mahasiswaundip.my.id/logo.png",
+      "url": "https://mahasiswaundip.my.id/",
+      "telephone": "+6281390776494",
+      "priceRange": "Rp5.000 - Rp20.000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Semarang",
+        "addressRegion": "Jawa Tengah",
+        "postalCode": "50275",
+        "addressCountry": "ID"
+      },
+      "areaServed": [
+        "Tembalang, Semarang",
+        "Pleburan, Semarang"
+      ],
+      "description": "Platform komunitas independen penyedia layanan antar-jemput dan jasa titip khusus mahasiswa di Tembalang dan Pleburan.",
+      "sameAs": [
+        "https://www.instagram.com/mahasiswaundip.id",
+        "https://www.tiktok.com/@mahasiswaundip.id"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu layanan Anjem & Jastip MahasiswaUndip.ID?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grup ini murni diperuntukkan untuk aktivitas koordinasi jasa Antar-Jemput (Anjem), Jasa Titip (Jastip), dan Jasa Suruh harian mahasiswa di wilayah Tembalang dan Pleburan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja aturan di dalam grup Anjem & Jastip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dilarang keras melakukan spam iklan komersial luar, menawarkan jasa joki akademik atau tugas kuliah, serta menyebarkan konten bermuatan SARA atau politik. Pelanggar akan dikenakan sanksi kick permanen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana sanksi bagi pelanggar aturan komunitas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Setiap akun yang melanggar aturan atau terindikasi melakukan aktivitas mencurigakan akan langsung dikenakan sanksi Kick Permanen oleh moderator."
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Optimasi koneksi lambat: Ditambahkan &display=swap agar teks langsung tampil instan -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
         /* --- RESET & BASE STYLE (NEO-BRUTALISM BERSIH) --- */
@@ -22,6 +98,7 @@
             background-color: #FFFFFF;
             color: #000000;
             line-height: 1.6;
+            min-height: 100vh; /* Fallback untuk HP/Browser lama */
             min-height: 100dvh;
             -webkit-font-smoothing: antialiased;
         }
@@ -47,6 +124,9 @@
             padding: 14px 18px;
             max-width: 1000px;
             margin: 0 auto;
+            /* Fallback gap untuk HP jadul */
+            margin-left: auto;
+            margin-right: auto;
             gap: 12px;
         }
         .logo {
@@ -577,14 +657,16 @@
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Anjem & Jastip</div>
-            <div class="nav-tag">by MahasiswaUndip.ID</div>
-        </div>
-    </nav>
+    <header>
+        <nav aria-label="Navigasi Utama">
+            <div class="nav-container">
+                <div class="logo">Anjem & Jastip</div>
+                <div class="nav-tag">by MahasiswaUndip.ID</div>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container">
+    <main class="container">
 
         <section class="hero">
             <h1>Solusi Transportasi & <span>Jasa Titip</span> Mahasiswa</h1>
@@ -597,6 +679,7 @@
             <div class="price-focus">
                 <div class="price-tag">Mulai 5K Aja</div>
                 <p style="color: #000000; font-weight: 700;">Terjangkau banget buat kamu yang sering bolak-balik kampus!</p>
+                <p style="font-size: 0.88rem; margin-top: 8px; font-weight: 500;"> * <a href="http://anjem.mahasiswaundip.my.id/Syarat&Ketentuan#bab-4" style="color: inherit; font-weight: 800; text-decoration: underline;">Ketentuan Tarif Minimum dan Biaya Tambahan</a>.</p>
             </div>
         </section>
 
@@ -604,18 +687,18 @@
             <h2 class="section-title">Tentang <span>Komunitas</span></h2>
             <p class="subtitle">Platform komunitas independen dari mahasiswa, oleh mahasiswa, untuk semua mahasiswa lintas kampus di wilayah Tembalang & Pleburan yang aktif sejak 2023</p>
             <div class="grid-services">
-                <div class="service-box">
+                <article class="service-box">
                     <h3>Aman & Teratur</h3>
                     <p>Grup dikontrol penuh oleh moderator dari <a href="https://mahasiswaundip.my.id" target="_blank">MahasiswaUndip.ID</a> untuk meminimalisir penyusup atau spammer.</p>
-                </div>
-                <div class="service-box">
+                </article>
+                <article class="service-box">
                     <h3>Khusus Mahasiswa</h3>
                     <p>Ekosistem komunitas yang berisi mahasiswa aktif antar-kampus di wilayah Tembalang, Pleburan & Sekitarnya.</p>
-                </div>
-                <div class="service-box">
+                </article>
+                <article class="service-box">
                     <h3>Sistem COD & Tanpa Biaya Tambahan</h3>
                     <p>Transaksi dilakukan langsung secara transparan antar pengguna setelah jasa selesai dikerjakan tanpa adanya tambahan biaya lain.</p>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -624,7 +707,7 @@
             <p class="subtitle">Ikuti langkah-langkah mudah berikut ini setelah kamu masuk ke grup WhatsApp komunitas:</p>
 
             <div class="order-list">
-                <div class="order-item">
+                <article class="order-item">
                     <div class="order-num">1</div>
                     <div class="order-text">
                         <h4>Format Pesan Harus Jelas</h4>
@@ -632,36 +715,37 @@
                         <div class="example-box">Contoh: "Need Anjem dari Sirojudin ke FSM jam 9"</div><br>
                         <div class="example-box">Contoh: "Need Jastip beli kertas ke Banjarsari"</div>
                     </div>
-                </div>
-                <div class="order-item">
+                </article>
+                <article class="order-item">
                     <div class="order-num">2</div>
                     <div class="order-text">
                         <h4>Gunakan Bahasa yang Sopan</h4>
                         <p>Berkomunikasilah secara santun & saling menghargai sesama anggota grup. Selalu utamakan kejujuran dan keamanan bersama.</p>
                     </div>
-                </div>
-                <div class="order-item">
+                </article>
+                <article class="order-item">
                     <div class="order-num">3</div>
                     <div class="order-text">
                         <h4>Verifikasi Keanggotaan Driver</h4>
                         <p>Demi keamanan, pastikan nomor WhatsApp driver/penyedia jasa yang menghubungi kamu lewat jalur pribadi (*chat PC*) terdaftar sebagai anggota di dalam grup.</p>
                     </div>
-                </div>
-                <div class="order-item">
+                </article>
+                <article class="order-item">
                     <div class="order-num">4</div>
                     <div class="order-text">
                         <h4>Belum Dapat Driver?</h4>
                         <p>Jika pesanan kamu belum direspons atau belum mendapatkan driver dalam beberapa waktu, silakan *reply* (balas) pesan awal kamu dengan <span style="font-weight: 800; background-color: #FF5A1F; padding: 0 4px;">"masih need"</span>.</p>
                     </div>
-                </div>
-                <div class="order-item">
+                </article>
+                <article class="order-item">
                     <div class="order-num">5</div>
                     <div class="order-text">
                         <h4>Pesanan Selesai / Terisi</h4>
                         <p>Jika kamu sudah mendapatkan driver atau pesanan sudah selesai diproses, wajib melakukan <span style="font-weight: 800; text-decoration: underline;">*unsend chat*</span> atau berikan *react* berupa <span style="font-weight: 800; text-decoration: underline;">tanda centang (<span class="inline-check" aria-label="centang">&#10003;</span>)</span> pada pesan kamu agar tidak di-chat lagi oleh driver lain.</p>
                     </div>
-                </div>
+                </article>
             </div>
+            <p style="margin-top: 16px; font-size: 0.92rem; font-weight: 500;">Untuk panduan selengkapnya mengenai alur pemesanan dan pembatalan, silakan baca <a href="http://anjem.mahasiswaundip.my.id/Syarat&Ketentuan#bab-3" style="color: inherit; font-weight: 800; text-decoration: underline;">Tata Cara Pemesanan (Order)</a>.</p>
         </section>
 
         <section class="glass-card">
@@ -695,16 +779,16 @@
 
             <div class="alert-box">
                 <h4>Himbauan Hindari Penipuan</h4>
-                <p>Selalu periksa keaslian profil personil pengirim jasa. Hindari melakukan transfer uang/pembayaran di awal (DP) sebelum barang atau jasa benar-benar kamu terima. Utamakan metode pembayaran Cash on Delivery (COD), jika jastip barang/ makanan kami menganjurkan pembayaran QRIS ke toko/resto tersebut (driver bisa fotokan QRIS toko/resto - costumer payment QRIS langsung ke toko/resto). Segera laporkan ke admin jika menemukan aktivitas mencurigakan.</p>
+                <p>Selalu periksa keaslian profil personil pengirim jasa. Hindari melakukan transfer uang/pembayaran di awal (DP) sebelum barang atau jasa benar-benar kamu terima. Utamakan metode pembayaran Cash on Delivery (COD), jika jastip barang/ makanan kami menganjurkan pembayaran QRIS ke toko/resto tersebut (driver bisa fotokan QRIS toko/resto - costumer payment QRIS langsung ke toko/resto). Segera laporkan ke admin jika menemukan aktivitas mencurigakan. Pelajari prosedur lengkapnya di <a href="http://anjem.mahasiswaundip.my.id/Syarat&Ketentuan#bab-5" style="color: inherit; font-weight: 800; text-decoration: underline;">Standar Pelaksanaan Transaksi dan Keamanan</a>.</p>
             </div>
 
             <div class="disclaimer-box">
                 <h4>Disclaimer</h4>
-                <p>Layanan Grup Anjem & Jastip dan MahasiswaUndip.ID murni bertindak sebagai penyedia media informasi dan wadah komunitas. Segala bentuk transaksi, kesepakatan harga, maupun risiko yang timbul selama aktivitas di RL sepenuhnya menjadi tanggung jawab masing-masing pengguna (pengguna jasa dan penyedia jasa).</p>
+                <p>Layanan Grup Anjem & Jastip dan MahasiswaUndip.ID murni bertindak sebagai penyedia media informasi dan wadah komunitas. Segala bentuk transaksi, kesepakatan harga, maupun risiko yang timbul selama aktivitas di RL sepenuhnya menjadi tanggung jawab masing-masing pengguna (pengguna jasa dan penyedia jasa). Selengkapnya, baca syarat dan ketentuan lengkap di <a href="http://anjem.mahasiswaundip.my.id/Syarat&Ketentuan" style="color: inherit; font-weight: 800; text-decoration: underline;">SYARAT DAN KETENTUAN LAYANAN KOMUNITAS</a>.</p>
             </div>
         </section>
 
-    </div>
+    </main>
 
     <footer>
         <div class="footer-cta">
